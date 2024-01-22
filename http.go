@@ -11,11 +11,12 @@ const defaultBashPath = "/_geecache/"
 
 // HTTPPool implements PeerPicker for a pool of HTTP peers.
 type HTTPPool struct {
-	// this
+	// this peer's base URL, e.g. "https://example.net:8080"
 	self     string
 	basePath string
 }
 
+// NewHTTPPool initializes an HTTP pool of peers.
 func NewHTTPPool(self string) *HTTPPool {
 	return &HTTPPool{
 		self:     self,
